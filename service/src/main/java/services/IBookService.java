@@ -1,10 +1,13 @@
 package services;
 
+import dto.BookDto;
 import model.Book;
 
+import java.util.List;
+
 public interface IBookService {
-    void addBook(Book book);
-    void deleteBook(Book book);
-    void editBook(Book book);
-    void showBooks();
+    void addBook(BookDto book);
+    void deleteBook(BookDto book);
+    void editBook(BookDto book);
+    List<BookDto> showBooks();
 }
