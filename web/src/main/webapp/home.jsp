@@ -2,14 +2,44 @@
 <html>
 <head>
     <title>Super Side!</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/header.jspf"/>
-<div class="container mt-5">
-    <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
-    </div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
 </div>
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>
 <script src="webjars/bootstrap/4.0.0-2/js/bootstrap.js"></script>
