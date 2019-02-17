@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
     <title>Super Side!</title>
@@ -17,6 +19,18 @@
         </tr>
         </thead>
         <tbody>
+
+            <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+
         <tr>
             <th scope="row">1</th>
             <td>Mark</td>
