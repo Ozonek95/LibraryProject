@@ -1,6 +1,6 @@
 package services;
 
-import pl.sda.Book;
+import model.Book;
 
 public interface IBookService {
     void addBook(Book book);
