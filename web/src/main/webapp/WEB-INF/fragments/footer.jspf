@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
 <html>
 <body>
-
+<hr>
+<footer>
+    <div class="container">
+    <p>© Company 2019</p>
+    </div>
+</footer>
 </body>
 </html>
