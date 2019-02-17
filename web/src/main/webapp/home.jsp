@@ -11,13 +11,9 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">ISBN</th>
-            <th scope="col">Author</th>
-            <th scope="col">Type</th>
-            <th scope="col">Release</th>
-            <th scope="col">Pages</th>
-            <th scope="col">Borrower</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
         </tr>
         </thead>
         <tbody>
@@ -25,10 +21,6 @@
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
             <td>@mdo</td>
         </tr>
         <tr>
