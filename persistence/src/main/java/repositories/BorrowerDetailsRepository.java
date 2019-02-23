@@ -1,4 +1,7 @@
 package repositories;
 
-public class BorrowerDetailsRepository {
+import model.BorrowerDetails;
+
+public class BorrowerDetailsRepository extends GenericRepository<BorrowerDetails,Integer> {
+
 }
