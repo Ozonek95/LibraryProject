@@ -3,6 +3,8 @@ package repositories;
 import hibernate.HibernateConnection;
 import model.Author;
 
+import java.util.List;
+
 public class AuthorRepository extends GenericRepository<Author,Integer> implements IAuthorRepository{
 
     @Override
@@ -23,5 +25,10 @@ public class AuthorRepository extends GenericRepository<Author,Integer> implemen
     @Override
     public Author find(int id) {
        return super.read(id);
+    }
+
+    @Override
+    public List<Author> findAll(){
+        return super.findAll();
     }
 }

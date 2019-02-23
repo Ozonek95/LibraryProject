@@ -8,27 +8,28 @@ import java.util.List;
 
 public class BooksRepository extends GenericRepository<Book,Integer> implements IBooksRepository {
 
-    public List<Book> getAllBooks(){
-        return super.findAll();
-    }
-
     @Override
-    public void save(Book author) {
-
+    public void save(Book book) {
+        super.create(book);
     }
 
     @Override
     public void delete(int id) {
-
+        super.deleteById(id);
     }
 
     @Override
-    public void edit(Book author) {
-
+    public void edit(Book book) {
+        super.update(book);
     }
 
     @Override
     public Book find(int id) {
         return null;
+    }
+
+    @Override
+    public List<Book> findAll(){
+        return super.findAll();
     }
 }

@@ -26,7 +26,7 @@ public class BookService implements IBookService {
     @Override
     public List<BookDto> showBooks() {
         BooksRepository repository = new BooksRepository();
-        List<Book> allBooks = repository.getAllBooks();
+        List<Book> allBooks = repository.findAll();
         List<BookDto> listToReturn = new ArrayList<>();
         for (Book book:allBooks) {
             BookDto bookDto = new BookDto();
