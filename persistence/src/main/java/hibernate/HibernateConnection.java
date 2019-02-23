@@ -1,6 +1,7 @@
 package hibernate;
 
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -11,7 +12,7 @@ public class HibernateConnection {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
-    public static SessionFactory getSessionFactory() {
+    public static Session getSession() {
 
         if (sessionFactory == null) try {
             registry = new StandardServiceRegistryBuilder()
@@ -26,7 +27,7 @@ public class HibernateConnection {
             e.printStackTrace();
             HibernateConnection.shutdown();
         }
-        return sessionFactory;
+        return sessionFactory.getCurrentSession();
     }
 
     public static void shutdown() {
@@ -34,4 +35,6 @@ public class HibernateConnection {
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }
+
+
 }

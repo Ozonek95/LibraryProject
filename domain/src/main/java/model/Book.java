@@ -31,4 +31,17 @@ public class Book {
 
     public Book() {
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", borrow=" + borrow +
+                ", category='" + category + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", summary='" + summary + '\'' +
+                ", title='" + title + '\'' +
+                ", author=" + author +
+                '}';
+    }
 }

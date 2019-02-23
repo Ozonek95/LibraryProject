@@ -1,6 +1,10 @@
 <%@ page import="services.BookService" %>
 <%@ page import="dto.BookDto" %>
 <%@ page import="java.util.List" %>
+<%@ page import="org.hibernate.Session" %>
+<%@ page import="hibernate.HibernateConnection" %>
+<%@ page import="model.Book" %>
+<%@ page import="model.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -15,6 +19,13 @@
 <br>
 <br>
 <%
+    Session currentSession = HibernateConnection.getSession();
+    currentSession.beginTransaction();
+    currentSession.save(new Book(false,"SO","dawfaw12",
+            "Summary","title", new Author()));
+    currentSession.save(new Book(false,"SO","dawfaw11",
+            "Summary","title", new Author()));
+    currentSession.getTransaction().commit();
     BookService bookService = new BookService();
     List<BookDto> bookDtos = bookService.showBooks();
 %>
@@ -39,7 +50,7 @@
                 <%=i+1%>
             </th>
             <td>
-                <%=bookDtos.get(i).getAuthorName()%>
+                <%=bookDtos.get(i).getTitle()%>
             </td>
             <td>
                 <%=bookDtos.get(i).getAuthorName()%>
