@@ -62,9 +62,9 @@
 
     </table>
     <div class="container-fluid">
-        <a href="" class="btn btn-warning">Add</a></li>
-        <a href="about.jspf" class="btn btn-warning">Delete</a></li>
-        <a href="about.jspf" class="btn btn-warning">Update</a></li>
+        <a href="add.jsp" class="btn btn-warning">Add</a>
+        <a href="about.jspf" class="btn btn-warning">Delete</a>
+        <a href="about.jspf" class="btn btn-warning">Update</a>
     </div>
 
 </div>
