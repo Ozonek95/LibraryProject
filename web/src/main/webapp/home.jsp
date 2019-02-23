@@ -19,44 +19,76 @@
     List<BookDto> bookDtos = bookService.showBooks();
 %>
 <div class="container">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Name</th>
-                <th scope="col">Surmname</th>
-                <th scope="col">email</th>
-            </tr>
-            </thead>
-            <tbody>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Title</th>
+            <th scope="col">Name author</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Summary</th>
+            <th scope="col">Borrowed</th>
+        </tr>
+        </thead>
+        <tbody>
 
-            <tr>
-                <th scope="row">1</th>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-            </tr>
+        <%
+            for (int i = 1; i < bookDtos.size(); i++) {%>
+        <tr>
+            <th scope="row">
+                <%=i%>
+            </th>
+            <td>
+                <%=bookDtos.get(i).getAuthorName()%>
+            </td>
+            <td>
+                <%=bookDtos.get(i).getAuthorName()%>
+            </td>
+            <td>
+                <%=bookDtos.get(i).getIsbn()%>
+            </td>
+            <td>
+                <%=bookDtos.get(i).getSummary()%>
+            </td>
+            <td>
+                <div class="bootstrap-switch-square">
+                    <input type="checkbox" data-toggle="switch" name="Borrowed" id="Borrowed"
+                           value=<%=bookDtos.get(i).isBorrowed() %>/>
+                </div>
+            </td>
+        </tr>
+        <%
+            }
+        %>
 
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            </tbody>
-        </table>
+        <tr>
+            <th scope="row">1</th>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+        </tr>
+
+        } %>
+        <tr>
+            <th scope="row">1</th>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
     </form>
 
 
