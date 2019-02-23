@@ -15,6 +15,7 @@ public class Book {
     private boolean borrow;
     private String category;
     private String isbn;
+    @Column(length = 1000)
     private String summary;
     private String title;
     @ManyToOne(cascade = CascadeType.ALL)

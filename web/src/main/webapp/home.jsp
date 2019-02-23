@@ -1,10 +1,3 @@
-<%@ page import="services.BookService" %>
-<%@ page import="dto.BookDto" %>
-<%@ page import="java.util.List" %>
-<%@ page import="org.hibernate.Session" %>
-<%@ page import="hibernate.HibernateConnection" %>
-<%@ page import="model.Book" %>
-<%@ page import="model.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -17,57 +10,59 @@
 <jsp:include page="/WEB-INF/fragments/header.jspf"/>
 <br>
 <br>
-<br>
-<%
-    BookService bookService = new BookService();
-    List<BookDto> bookDtos = bookService.showBooks();
-%>
+<c:set var="books" value="${requestScope.books}" />
 <div class="container">
     <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col"></th>
             <th scope="col">Title</th>
-            <th scope="col">Name author</th>
+            <th scope="col">Author name</th>
             <th scope="col">ISBN</th>
             <th scope="col">Summary</th>
             <th scope="col">Borrowed</th>
         </tr>
         </thead>
-        <tbody>
 
-        <%
-            for (int i = 0; i < bookDtos.size(); i++) {%>
-        <tr>
-            <th scope="row">
-                <%=i+1%>
-            </th>
-            <td>
-                <%=bookDtos.get(i).getTitle()%>
-            </td>
-            <td>
-                <%=bookDtos.get(i).getAuthorName()%>
-            </td>
-            <td>
-                <%=bookDtos.get(i).getIsbn()%>
-            </td>
-            <td>
-                <%=bookDtos.get(i).getSummary()%>
-            </td>
-            <td>
-                <div class="bootstrap-switch-square">
-                    <button type="button" class="btn btn-success" title="Book status" value= <%=false%>>
-                    </button>
-                </div>
-            </td>
-        </tr>
-        <%
-            }
-        %>
+        <c:set var ="index" value = "${1}"/>
 
-        </tbody>
+        <c:forEach var="book" items="${books}">
+
+            <tr>
+                <td>${index}</td>
+                <td>${book.title}</td>
+                <td>${book.authorName}</td>
+                <td>${book.isbn}</td>
+                <td>${book.summary}</td>
+                <td>
+                <c:if test="${!book.borrowed}">
+                    <div class="bootstrap-switch-square">
+                        <button type="button" class="btn btn-success" title="Book status">
+                               free
+                        </button>
+                    </div>
+                </c:if>
+                <c:if test="${book.borrowed}">
+                    <div class="bootstrap-switch-square">
+                        <button type="button" class="btn btn-danger" title="Book status">
+                            borrowed
+                        </button>
+                    </div>
+                </c:if>
+                </td>
+                <td><input type="radio" name="checked" value="+${index}"></td>
+            </tr>
+
+            <c:set var="index" value="${index+1}"/>
+        </c:forEach>
+
+
     </table>
-
+    <div class="container-fluid">
+        <a href="home.jsp" class="btn btn-warning">Add</a></li>
+        <a href="about.jspf" class="btn btn-warning">Delete</a></li>
+        <a href="about.jspf" class="btn btn-warning">Update</a></li>
+    </div>
 
 </div>
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>
