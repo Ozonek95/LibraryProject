@@ -19,13 +19,6 @@
 <br>
 <br>
 <%
-    Session currentSession = HibernateConnection.getSession();
-    currentSession.beginTransaction();
-    currentSession.save(new Book(false,"SO","dawfaw12",
-            "Summary","title", new Author()));
-    currentSession.save(new Book(false,"SO","dawfaw11",
-            "Summary","title", new Author()));
-    currentSession.getTransaction().commit();
     BookService bookService = new BookService();
     List<BookDto> bookDtos = bookService.showBooks();
 %>

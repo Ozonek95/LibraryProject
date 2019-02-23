@@ -1,3 +1,8 @@
+import hibernate.HibernateConnection;
+import model.Author;
+import model.Book;
+import org.hibernate.Session;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +18,15 @@ public class HomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        Session currentSession = HibernateConnection.getSession();
+        currentSession.beginTransaction();
+        currentSession.save(new Book(false,"SO","dawfaw12",
+                "Summary","title", new Author()));
+        currentSession.save(new Book(false,"SO","dawfaw11",
+                "Summary","title", new Author()));
+        currentSession.getTransaction().commit();
+
+        response.sendRedirect("home.jsp");
 
     }
 }
