@@ -62,7 +62,7 @@
 
     </table>
     <div class="container-fluid">
-        <a href="WEB-INF/fragments/add.jsp" class="btn btn-warning">Add</a></li>
+        <a href="" class="btn btn-warning">Add</a></li>
         <a href="about.jspf" class="btn btn-warning">Delete</a></li>
         <a href="about.jspf" class="btn btn-warning">Update</a></li>
     </div>
