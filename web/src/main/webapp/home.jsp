@@ -56,8 +56,8 @@
             </td>
             <td>
                 <div class="bootstrap-switch-square">
-                    <input type="checkbox" data-toggle="switch" name="Borrowed" id="Borrowed"
-                           value=<%=bookDtos.get(i).isBorrowed() %>/>
+                    <button type="button" class="btn btn-success" title="Book status" value= <%=false%>>
+                    </button>
                 </div>
             </td>
         </tr>
