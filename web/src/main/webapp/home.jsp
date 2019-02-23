@@ -50,7 +50,10 @@
                     </div>
                 </c:if>
                 </td>
-                <td><input type="radio" name="checked" value="+${index}"></td>
+                <td><label>
+
+                    <input type="radio" name="checked" value="+${index}">
+                </label></td>
             </tr>
 
             <c:set var="index" value="${index+1}"/>
