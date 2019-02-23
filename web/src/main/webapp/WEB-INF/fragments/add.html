@@ -24,7 +24,7 @@
         <div class="col-md-8 mx-auto">
           <div class="col-md-12 order-md-1" style="">
             <h4 class="mb-3 text-center" style=""><b>Add book</b></h4>
-            <form class="needs-validation" novalidate="">
+            <form action="/AddBookServlet" method="post">
               <div class="mb-3">
                 <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
               </div>
@@ -33,7 +33,7 @@
                   <div class="form-group row">
                     <div class="col-md-12"><label class="col-2">Title</label>
                       <div class="form-group row">
-                        <div class="col-10"><input type="text" class="form-control" id="firstName" placeholder="" value="" required=""></div>
+                        <div class="col-10"><input type="text" class="form-control"  placeholder="Book title" name="title" ></div>
                       </div>
                     </div>
                   </div>
@@ -41,25 +41,25 @@
                 <div class="col-md-6" style="">
                   <div class="form-group row">
                     <div class="col-10 col-md-12" style="">
-                      <div class="col-10 col-md-12"><label for="lastName">Autor name</label></div><input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                      <div class="col-10 col-md-12"><label>Author name</label></div><input type="text" class="form-control" placeholder="Author name" name="author">
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="mb-3"> <label for="username">ISBN</label>
+              <div class="mb-3"> <label>ISBN</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                  <input type="text" class="form-control" placeholder="isbn" name="isbn">
                   <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
                 </div>
               </div>
               <div class="mb-3"> <label for="address">Summary</label>
-                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                <input type="text" class="form-control" id="address" placeholder="summary" name="summary">
+                <div class="invalid-feedback"> summary </div>
               </div>
               <hr class="mb-4">
             </form>
           </div>
-          <a class="btn btn-lg mx-1 btn-outline-dark" href="#">add</a> <a href="#" class="btn btn-lg btn-primary mx-1">Something</a>
+          <a class="btn btn-lg mx-1 btn-outline-dark" href="#">Add</a> <a href="#" class="btn btn-lg btn-primary mx-1">Back</a>
         </div>
       </div>
     </div>
