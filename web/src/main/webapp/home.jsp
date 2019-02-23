@@ -33,10 +33,10 @@
         <tbody>
 
         <%
-            for (int i = 1; i < bookDtos.size(); i++) {%>
+            for (int i = 0; i < bookDtos.size(); i++) {%>
         <tr>
             <th scope="row">
-                <%=i%>
+                <%=i+1%>
             </th>
             <td>
                 <%=bookDtos.get(i).getAuthorName()%>
@@ -61,39 +61,11 @@
             }
         %>
 
-        <tr>
-            <th scope="row">1</th>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-        </tr>
-
-        } %>
-        <tr>
-            <th scope="row">1</th>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
         </tbody>
     </table>
-    </form>
 
 
 </div>
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>
-<script src="webjars/bootstrap/4.0.0-2/js/bootstrap.js"></script>
 </body>
 </html>
