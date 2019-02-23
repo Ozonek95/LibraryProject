@@ -12,8 +12,8 @@ public class Borrower {
     @Id
     @GeneratedValue
     private int borrowerId;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     @OneToOne(cascade = CascadeType.ALL)
     private BorrowerDetails borrowerDetailsId;
 }

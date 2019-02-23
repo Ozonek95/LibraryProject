@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <title>Super Side!</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -15,21 +15,17 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Surmname</th>
+                <th scope="col">email</th>
             </tr>
             </thead>
             <tbody>
 
             <tr>
                 <th scope="row">1</th>
-                <td></td>
                 <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
                 <td>@mdo</td>
                 <td>@mdo</td>
             </tr>
