@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Setter
 public class Borrower {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int borrowerId;
     private String firstName;
     private String lastName;
