@@ -17,4 +17,6 @@ public class Borrow {
     @OneToOne
     private Borrower borrowerId;
     private Date rentalDate;
+
+
 }

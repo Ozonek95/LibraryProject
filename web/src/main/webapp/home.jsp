@@ -1,3 +1,6 @@
+<%@ page import="services.BookService" %>
+<%@ page import="dto.BookDto" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -11,6 +14,10 @@
 <br>
 <br>
 <br>
+<%
+    BookService bookService = new BookService();
+    List<BookDto> bookDtos = bookService.showBooks();
+%>
 <div class="container">
         <table class="table table-striped">
             <thead>
