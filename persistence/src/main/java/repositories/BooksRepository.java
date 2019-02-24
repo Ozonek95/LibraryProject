@@ -1,8 +1,9 @@
 package repositories;
 
-import hibernate.HibernateConnection;
+
 import model.Book;
-import org.hibernate.Session;
+
+import org.hibernate.Transaction;
 
 import java.util.List;
 
@@ -25,11 +26,11 @@ public class BooksRepository extends GenericRepository<Book,Integer> implements 
 
     @Override
     public Book find(int id) {
-        return null;
+       return super.read(id);
     }
 
     @Override
     public List<Book> findAll(){
-        return super.findAll();
+            return session.createNativeQuery("Select * from book",Book.class).list();
     }
 }

@@ -14,6 +14,14 @@ public class Borrower {
     private int borrowerId;
     private String firstName;
     private String lastName;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     private BorrowerDetails borrowerDetailsId;
+
+    public Borrower(){}
+
+    public Borrower(String firstName, String lastName, BorrowerDetails borrowerDetailsId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.borrowerDetailsId = borrowerDetailsId;
+    }
 }

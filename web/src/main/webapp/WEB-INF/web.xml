@@ -9,6 +9,7 @@
   <welcome-file-list>
     <welcome-file>HomeServlet</welcome-file>
   </welcome-file-list>
+
   <jsp-config>
     <jsp-property-group>
       <url-pattern>*.jsp</url-pattern>

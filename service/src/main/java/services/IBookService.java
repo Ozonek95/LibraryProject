@@ -10,4 +10,5 @@ public interface IBookService {
     void deleteBook(BookDto book);
     void editBook(BookDto book);
     List<BookDto> showBooks();
+    BookDto findBook(int bookId);
 }

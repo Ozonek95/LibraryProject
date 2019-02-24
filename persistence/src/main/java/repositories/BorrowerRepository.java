@@ -8,7 +8,7 @@ public class BorrowerRepository extends GenericRepository<Borrower,Integer> impl
 
     @Override
     public void save(Borrower borrower) {
-        super.create(borrower);
+         super.create(borrower);
     }
 
     @Override

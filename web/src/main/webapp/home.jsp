@@ -1,10 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.2.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
 </head>
 <body>
 <jsp:include page="/WEB-INF/fragments/header.jspf"/>
@@ -36,20 +37,36 @@
                 <td>${book.isbn}</td>
                 <td>${book.summary}</td>
                 <td>
-                <c:if test="${!book.borrowed}">
-                    <div class="bootstrap-switch-square">
-                        <button type="button" class="btn btn-success" title="Book status">
-                               free
-                        </button>
-                    </div>
-                </c:if>
-                <c:if test="${book.borrowed}">
-                    <div class="bootstrap-switch-square">
-                        <button type="button" class="btn btn-danger" title="Book status">
-                            borrowed
-                        </button>
-                    </div>
-                </c:if>
+                <%--<c:if test="${!book.borrowed}">--%>
+                    <%--<div class="bootstrap-switch-square">--%>
+                        <%--<button type="button" class="btn btn-success" title="Book status">--%>
+                               <%--free--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
+                <%--</c:if>--%>
+                <%--<c:if test="${book.borrowed}">--%>
+                    <%--<div class="bootstrap-switch-square">--%>
+                        <%--<button type="button" class="btn btn-danger" title="Book status">--%>
+                            <%--borrowed--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
+                <%--</c:if>--%>
+                    <c:choose>
+                    <c:when test="${!book.borrowed}">
+                        <div class="bootstrap-switch-square">
+                            <button type="button" class="btn btn-success" title="Book status">
+                                free
+                            </button>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="bootstrap-switch-square">
+                            <button type="button" class="btn btn-danger" title="Book status">
+                                borrowed
+                            </button>
+                        </div>
+                    </c:otherwise>
+                    </c:choose>
                 </td>
                 <td><label>
                     <input type="radio" name="radio" value="+${book.id}">
@@ -64,7 +81,7 @@
     <div class="container-fluid">
         <a href="add.jsp" class="btn btn-warning">Add</a>
         <button type="submit" class="btn btn-warning" name="option" value="DELETE">Delete</button>
-        <button type="submit" class="btn btn-warning" name="option" value="UPDATE">Update</button>
+        <button type="submit" class="btn btn-warning" name="option" value="BORROW">Borrow</button>
     </div>
     </form>
 </div>

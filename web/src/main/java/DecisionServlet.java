@@ -1,5 +1,6 @@
 import actions.Action;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,13 +13,18 @@ public class DecisionServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Action action = Action.valueOf(request.getParameter("option"));
 
-        switch (action) {
-            case DELETE:
-                response.sendRedirect("/DeleteServlet?bookId="+request.getParameter("radio"));
-                break;
-            case UPDATE:
-                response.sendRedirect("/UpdateServlet?bookId="+request.getParameter("radio"));
-                break;
+        String radio = request.getParameter("radio");
+        if (radio == null) {
+            response.sendRedirect("/HomeServlet");
+        } else {
+            switch (action) {
+                case DELETE:
+                    response.sendRedirect("/DeleteServlet?bookId=" + radio);
+                    break;
+                case BORROW:
+                    response.sendRedirect("/BorrowServlet?bookId=" + radio);
+                    break;
+            }
         }
     }
 

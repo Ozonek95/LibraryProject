@@ -1,15 +1,17 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost/library</property>
         <property name="hibernate.connection.username">student1</property>
         <property name="hibernate.connection.password">student1</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
         <property name="show_sql">true</property>
         <property name="hibernate.id.new_generator_mappings">false</property>
-
+        <property name="hibernate.connection.CharSet">utf8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
 
         <mapping class="model.Book"/>
         <mapping class="model.Author"/>

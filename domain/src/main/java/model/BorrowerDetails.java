@@ -18,4 +18,11 @@ public class BorrowerDetails {
     private String addess;
     private String email;
     private String phone;
+
+    public BorrowerDetails(){}
+
+    public BorrowerDetails(String addess, String email) {
+        this.addess = addess;
+        this.email = email;
+    }
 }

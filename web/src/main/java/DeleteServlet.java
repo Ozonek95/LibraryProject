@@ -16,9 +16,11 @@ public class DeleteServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String bookId = request.getParameter("bookId");
-        bookId=bookId.trim();
-        repository.delete(Integer.valueOf(bookId));
-        response.sendRedirect("/HomeServlet");
+
+            String bookId = request.getParameter("bookId");
+            bookId = bookId.trim();
+            repository.delete(Integer.valueOf(bookId));
+            response.sendRedirect("/HomeServlet");
+
     }
 }

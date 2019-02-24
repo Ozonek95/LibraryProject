@@ -44,15 +44,28 @@ public class BookService implements IBookService {
         List<Book> allBooks = repository.findAll();
         List<BookDto> listToReturn = new ArrayList<>();
         for (Book book:allBooks) {
-            BookDto bookDto = new BookDto();
-            bookDto.setId(book.getBookId());
-            bookDto.setAuthorName(book.getAuthor().getFirstName()+" "+book.getAuthor().getLastName());
-            bookDto.setBorrowed(book.isBorrow());
-            bookDto.setIsbn(book.getIsbn());
-            bookDto.setSummary(book.getSummary());
-            bookDto.setTitle(book.getTitle());
+            BookDto bookDto = getBookDto(book);
             listToReturn.add(bookDto);
         }
         return listToReturn;
+    }
+
+
+    @Override
+    public BookDto findBook(int bookId) {
+        Book book = repository.find(bookId);
+        BookDto bookDto = getBookDto(book);
+        return bookDto;
+    }
+
+    private BookDto getBookDto(Book book) {
+        BookDto bookDto = new BookDto();
+        bookDto.setId(book.getBookId());
+        bookDto.setAuthorName(book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName());
+        bookDto.setBorrowed(book.isBorrow());
+        bookDto.setIsbn(book.getIsbn());
+        bookDto.setSummary(book.getSummary());
+        bookDto.setTitle(book.getTitle());
+        return bookDto;
     }
 }
