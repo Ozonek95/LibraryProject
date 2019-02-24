@@ -17,6 +17,10 @@ public class BookService implements IBookService {
         repository = new BooksRepository();
     }
 
+    public BookService(IBooksRepository booksRepository){
+        this.repository = booksRepository;
+    }
+
     @Override
     public void addBook(BookDto book) {
         Book bookToRepository = new Book();

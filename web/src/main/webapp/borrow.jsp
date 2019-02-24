@@ -104,7 +104,7 @@
             </div>
             <hr class="mb-4">
           </div>
-            <a class="btn btn-lg mx-1 btn-outline-dark" href="#"><button type="submit" name="bookId" value="${book.id}">Borrow</button></a> <a href="#" class="btn btn-lg btn-primary mx-1">Back</a>
+            <a class="btn btn-lg mx-1 btn-outline-dark" href="#"><button type="submit" name="bookId" value="${book.id}">Borrow</button></a> <a href="/HomeServlet" class="btn btn-lg btn-primary mx-1">Back</a>
 
         </div>
       </div>

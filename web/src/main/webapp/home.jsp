@@ -55,7 +55,7 @@
                     <c:when test="${!book.borrowed}">
                         <div class="bootstrap-switch-square">
                             <button type="button" class="btn btn-success" title="Book status">
-                                free
+                                available
                             </button>
                         </div>
                     </c:when>
