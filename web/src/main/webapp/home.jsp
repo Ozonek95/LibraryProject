@@ -82,6 +82,7 @@
         <a href="add.jsp" class="btn btn-warning">Add</a>
         <button type="submit" class="btn btn-warning" name="option" value="DELETE">Delete</button>
         <button type="submit" class="btn btn-warning" name="option" value="BORROW">Borrow</button>
+        <button type="submit" class="btn btn-warning" name="option" value="GIVE_BACK">Give back</button>
     </div>
     </form>
 </div>

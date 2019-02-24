@@ -24,6 +24,9 @@ public class DecisionServlet extends HttpServlet {
                 case BORROW:
                     response.sendRedirect("/BorrowServlet?bookId=" + radio);
                     break;
+                case GIVE_BACK:
+                    response.sendRedirect("/GiveBackServlet?bookId=" + radio);
+                    break;
             }
         }
     }

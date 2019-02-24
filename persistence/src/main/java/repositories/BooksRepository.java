@@ -32,6 +32,6 @@ public class BooksRepository extends GenericRepository<Book,Integer> implements 
     @Override
     public List<Book> findAll(){
         session.clear();
-        return session.createNativeQuery("Select * from book",Book.class).list();
+        return session.createNativeQuery("Select * from Book",Book.class).list();
     }
 }

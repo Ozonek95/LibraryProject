@@ -1,5 +1,7 @@
 package actions;
 
 public enum Action {
-    DELETE,BORROW
+    DELETE,
+    BORROW,
+    GIVE_BACK
 }

@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-8 mx-auto"><i class="d-block fa fa-stop-circle mb-3 text-muted fa-5x"></i>
                     <h1 class="display-3 mb-4" contenteditable="true">Library</h1>
-                    <p class="lead mb-5">Some test about project</div>
+                    <p class="lead mb-5"></div>
             </div>
         </div>
     </div>

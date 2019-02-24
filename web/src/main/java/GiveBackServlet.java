@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/BorrowServlet")
-public class BorrowServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/GiveBackServlet")
+public class GiveBackServlet extends HttpServlet {
     private final IBookService service;
 
-    public BorrowServlet() {
+    public GiveBackServlet() {
         this.service = new BookService();
     }
 
@@ -23,9 +23,11 @@ public class BorrowServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String bookId = request.getParameter("bookId");
-        bookId=bookId.trim();
+        bookId = bookId.trim();
         BookDto bookDto = service.findBook(Integer.valueOf(bookId));
-        request.setAttribute("book",bookDto);
-        request.getRequestDispatcher("borrow.jsp").forward(request,response);
+        bookDto.setBorrowed(false);
+        request.setAttribute("book", bookDto);
+        response.sendRedirect("/HomeServlet");
+
     }
 }
