@@ -16,7 +16,7 @@ public class Book {
     private String category;
     @Column(unique = true)
     private String isbn;
-    @Column(length = 1000)
+    @Column(length = 3000)
     private String summary;
     private String title;
     @ManyToOne(cascade = CascadeType.PERSIST)
