@@ -14,11 +14,12 @@ public class Book {
     private int bookId;
     private boolean borrow;
     private String category;
+    @Column(unique = true)
     private String isbn;
     @Column(length = 1000)
     private String summary;
     private String title;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Author author;
 
     public Book(boolean borrow, String category, String isbn, String summary, String title, Author author) {

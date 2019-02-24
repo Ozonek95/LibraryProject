@@ -1,8 +1,4 @@
 import dto.BookDto;
-import hibernate.HibernateConnection;
-import model.Author;
-import model.Book;
-import org.hibernate.Session;
 import services.BookService;
 
 import javax.servlet.RequestDispatcher;
@@ -16,13 +12,19 @@ import java.util.List;
 
 @WebServlet(urlPatterns= "/HomeServlet")
 public class HomeServlet extends HttpServlet {
+    private final BookService bookService = new BookService();
+
+//    public HomeServlet() {
+//        this.bookService = new BookService();
+//    }
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        BookService bookService = new BookService();
         List<BookDto> bookDtos = bookService.showBooks();
         request.setAttribute("books",bookDtos);
 

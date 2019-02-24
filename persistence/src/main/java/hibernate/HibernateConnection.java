@@ -27,7 +27,7 @@ public class HibernateConnection {
             e.printStackTrace();
             HibernateConnection.shutdown();
         }
-        return sessionFactory.getCurrentSession();
+        return sessionFactory.openSession();
     }
 
     public static void shutdown() {

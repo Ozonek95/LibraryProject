@@ -12,6 +12,7 @@
 <br>
 <c:set var="books" value="${requestScope.books}" />
 <div class="container">
+    <form action="/DecisionServlet" method="post">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -51,8 +52,7 @@
                 </c:if>
                 </td>
                 <td><label>
-
-                    <input type="radio" name="checked" value="+${index}">
+                    <input type="radio" name="radio" value="+${book.id}">
                 </label></td>
             </tr>
 
@@ -63,10 +63,10 @@
     </table>
     <div class="container-fluid">
         <a href="add.jsp" class="btn btn-warning">Add</a>
-        <a href="about.jspf" class="btn btn-warning">Delete</a>
-        <a href="about.jspf" class="btn btn-warning">Update</a>
+        <button type="submit" class="btn btn-warning" name="option" value="DELETE">Delete</button>
+        <button type="submit" class="btn btn-warning" name="option" value="UPDATE">Update</button>
     </div>
-
+    </form>
 </div>
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>
 </body>

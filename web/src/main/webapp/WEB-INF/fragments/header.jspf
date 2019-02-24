@@ -16,7 +16,7 @@ To change this template use File | Settings | File Templates.
                                    class="navbar-brand text-uppercase font-weight-bold"><span>Library</span></a>
             </div>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="home.jsp" class="btn btn-warning">Home</a></li>
+                <li class="nav-item"><a href="/HomeServlet" class="btn btn-warning">Home</a></li>
                 <li class="nav-item ml-lg-3"><a href="about.jspf" class="btn btn-warning">About</a></li>
             </ul>
         </div>
