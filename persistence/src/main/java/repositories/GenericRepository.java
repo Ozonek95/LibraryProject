@@ -88,7 +88,7 @@ public abstract class GenericRepository<T, K> {
             transaction = session.getTransaction();
             transaction.begin();
             //session.clear();
-            items = (List<T>) session.createNativeQuery("from "+ entityClass.getName()).list();
+            items = (List<T>) session.createQuery("from "+ entityClass.getName()).list();
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {

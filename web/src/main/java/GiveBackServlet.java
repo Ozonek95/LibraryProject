@@ -1,5 +1,6 @@
 import dto.BookDto;
 import services.BookService;
+import services.BorrowService;
 import services.IBookService;
 
 import javax.servlet.ServletException;
@@ -12,9 +13,12 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/GiveBackServlet")
 public class GiveBackServlet extends HttpServlet {
     private final IBookService service;
+    private final BorrowService borrowService;
 
-    public GiveBackServlet() {
+    public GiveBackServlet()
+    {
         this.service = new BookService();
+        this.borrowService = new BorrowService();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,8 +29,10 @@ public class GiveBackServlet extends HttpServlet {
         String bookId = request.getParameter("bookId");
         bookId = bookId.trim();
         BookDto bookDto = service.findBook(Integer.valueOf(bookId));
-        bookDto.setBorrowed(false);
-        request.setAttribute("book", bookDto);
+        if(bookDto.isBorrowed()){
+            borrowService.giveBookBack(bookDto);
+        }
+
         response.sendRedirect("/HomeServlet");
 
     }

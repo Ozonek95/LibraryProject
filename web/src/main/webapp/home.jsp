@@ -37,20 +37,6 @@
                 <td>${book.isbn}</td>
                 <td>${book.summary}</td>
                 <td>
-                <%--<c:if test="${!book.borrowed}">--%>
-                    <%--<div class="bootstrap-switch-square">--%>
-                        <%--<button type="button" class="btn btn-success" title="Book status">--%>
-                               <%--free--%>
-                        <%--</button>--%>
-                    <%--</div>--%>
-                <%--</c:if>--%>
-                <%--<c:if test="${book.borrowed}">--%>
-                    <%--<div class="bootstrap-switch-square">--%>
-                        <%--<button type="button" class="btn btn-danger" title="Book status">--%>
-                            <%--borrowed--%>
-                        <%--</button>--%>
-                    <%--</div>--%>
-                <%--</c:if>--%>
                     <c:choose>
                     <c:when test="${!book.borrowed}">
                         <div class="bootstrap-switch-square">
