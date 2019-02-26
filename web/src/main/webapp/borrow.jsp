@@ -80,7 +80,7 @@
               <label>Email</label>
               <div class="form-group row">
                 <div class="col-10 col-md-12" style="">
-                  <input type="email" class="form-control text-center" id="inputmailh" placeholder="mail@example.com"> </div>
+                  <input type="email" class="form-control text-center" id="inputmailh" pattern=".+@g[a-z].com" placeholder="mail@example.com"> </div>
               </div>
             </form><label class ="text-left">Book info</label>
             <div class="row">
