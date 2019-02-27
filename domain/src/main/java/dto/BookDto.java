@@ -43,4 +43,8 @@ public class BookDto {
     public int hashCode() {
         return Objects.hash(title, authorName, isbn, summary, borrowed);
     }
+
+    public boolean isBorrowed() {
+        return borrowed;
+    }
 }

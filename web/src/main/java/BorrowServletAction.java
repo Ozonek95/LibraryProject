@@ -26,12 +26,13 @@ public class BorrowServletAction extends HttpServlet {
         int bookId = Integer.valueOf(request.getParameter("bookId"));
         BookDto bookDto = service.findBook(Integer.valueOf(bookId));
 
-        if (bookDto.isBorrowed()) {
+        if (!bookDto.isBorrowed()) {
             BorrowDto borrowDto = new BorrowDto(name, surname, bookId, email, zip_code, city, street);
             borrowService.borrowBook(borrowDto);
             response.sendRedirect("/HomeServlet");
+        } else {
+            request.getRequestDispatcher("/HomeServlet").forward(request, response);
         }
-        request.getRequestDispatcher("/HomeServlet").forward(request,response);
 
     }
 

@@ -1,8 +1,8 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.username">student1</property>
-        <property name="hibernate.connection.password">student1</property>
+        <property name="hibernate.connection.username">student</property>
+        <property name="hibernate.connection.password">student</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.hbm2ddl.auto">update </property>
