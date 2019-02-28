@@ -29,7 +29,7 @@ public class DeleteServlet extends HttpServlet {
         String bookId = request.getParameter("bookId");
         bookId = bookId.trim();
         BookDto bookDto = service.findBook(Integer.valueOf(bookId));
-        if (bookDto.isBorrowed()) {
+        if (!bookDto.isBorrowed()) {
             repository.delete(Integer.valueOf(bookId));
         }
         response.sendRedirect("/HomeServlet");
